@@ -1,0 +1,21 @@
+GET http://localhost:8080/ HTTP/1.1
+Host: localhost:8000
+API_KEY: token2
+
+###
+
+GET http://localhost:8080/ HTTP/1.1
+Host: localhost:8000
+API_KEY: token3
+
+###
+
+GET http://localhost:8080/ HTTP/1.1
+Host: localhost:8000
+API_KEY: token7
+
+###
+
+GET http://localhost:8080/ HTTP/1.1
+Host: localhost:8000
+
