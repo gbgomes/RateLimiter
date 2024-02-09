@@ -16,7 +16,7 @@ func TestInclusaoDeChave(t *testing.T) {
 	})
 
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	bd.IncluiChave("test", 1, 5)
@@ -28,7 +28,7 @@ func TestInclusaoDeChave(t *testing.T) {
 
 func TestConsultaDeChave(t *testing.T) {
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	bd.IncluiChave("test", 1, 0)
@@ -40,7 +40,7 @@ func TestConsultaDeChave(t *testing.T) {
 
 func TestExpiracaoDeChave(t *testing.T) {
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	bd.IncluiChave("test", 1, 5)
@@ -60,7 +60,7 @@ func TestExpiracaoDeChave(t *testing.T) {
 
 func TestIncrementaChave(t *testing.T) {
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	bd.IncluiChave("test", 1, 5)
@@ -76,7 +76,7 @@ func TestIncrementaChave(t *testing.T) {
 
 func TestExclusaoDeChave(t *testing.T) {
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	bd.IncluiChave("test", 1, 0)
@@ -103,7 +103,7 @@ func TestBloqueiaChave(t *testing.T) {
 	})
 
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	err = bd.BloqueiaChave("test", 5)
@@ -120,7 +120,7 @@ func TestBloqueiaChave(t *testing.T) {
 
 func TestVerificaChaveBloqueada(t *testing.T) {
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	bd.BloqueiaChave("test", 1)
@@ -131,12 +131,12 @@ func TestVerificaChaveBloqueada(t *testing.T) {
 
 func TestListaTokens(t *testing.T) {
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	tokens := []Token{
-		{"tk1", 1, 1, 10},
-		{"tk2", 2, 2, 20},
+		{"TkConfig:tk1", 1, 1, 10},
+		{"TkConfig:tk2", 2, 2, 20},
 	}
 
 	for _, token := range tokens {

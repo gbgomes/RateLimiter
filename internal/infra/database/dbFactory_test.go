@@ -9,7 +9,7 @@ import (
 
 func TestCreateDataBaseType(t *testing.T) {
 	bd, err := Newdb("Redis", "localhost", "6379")
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	assert.NotNil(t, bd)
 
 	assert.Equal(t, "*database.RedisRL", reflect.TypeOf(bd).String())
